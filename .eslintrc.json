@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "standard-with-typescript",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": ["./tsconfig.json"],
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "extraFileExtensions": [".css", ".png"]
+  },
+  "plugins": ["react"],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ],
+    "@typescript-eslint/semi": 0,
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", "never"],
+    "@typescript-eslint/space-before-function-paren" : 0,
+    "import/no-unused-modules": "off",
+    "@typescript-eslint/return-await": 0,
+    "@typescript-eslint/consistent-type-imports": 0,
+    "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/no-misused-promises": 0,
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/restrict-template-expressions": 0,
+    "@typescript-eslint/restrict-plus-operands": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-floating-promises" : 0,
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "semi",
+        "requireLast": false
+      },
+      "multilineDetection": "brackets"
+    }]
+  },
+  "ignorePatterns": ["*.css", "*.png"]
+}

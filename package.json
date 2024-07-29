@@ -1,0 +1,65 @@
+{
+  "name": "my-todolist",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "lint": "eslint --fix src/**/**/* src/**/* src/*"
+  },
+  "dependencies": {
+    "@emotion/react": "11.11.4",
+    "@emotion/styled": "11.11.5",
+    "@mui/icons-material": "5.16.5",
+    "@mui/lab": "5.0.0-alpha.170",
+    "@mui/material": "5.15.15",
+    "axios": "1.6.8",
+    "customize-cra": "1.0.0",
+    "dotenv": "16.4.5",
+    "dotenv-webpack": "8.1.0",
+    "i18next": "23.11.3",
+    "moment": "2.30.1",
+    "process": "0.11.10",
+    "ra-data-json-server": "4.16.15",
+    "react": "18.3.1",
+    "react-admin": "4.16.15",
+    "react-hook-form": "7.51.5",
+    "react-i18next": "14.1.1",
+    "react-router-dom": "^6.22.3",
+    "styled-components": "6.1.8",
+    "web-vitals": "2.1.4",
+    "webpack": "5.91.0"
+  },
+  "devDependencies": {
+    "@types/node": "16.18.96",
+    "@types/react": "18.2.75",
+    "@types/react-dom": "18.2.24",
+    "@types/webpack": "5.28.5",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "dotenv-cli": "7.4.1",
+    "eslint": "8.45.0",
+    "eslint-config-standard-with-typescript": "36.1.0",
+    "react-app-rewired": "2.2.1",
+    "typescript": "4.9.5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
