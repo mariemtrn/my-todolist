@@ -7,6 +7,7 @@ module.exports = override(
         config.resolve.alias = {
             ...config.resolve.alias,
             '@src': path.resolve(__dirname, 'src'),
+            '@store': path.resolve(__dirname, 'src/store'),
             '@base': path.resolve(__dirname, ''),
             '@components': path.resolve(__dirname, 'src/components'),
             '@utils': path.resolve(__dirname, 'src/utils'),

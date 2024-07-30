@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addElement } from '@store/actions.store';
+import { RootState } from '@store/types.store';
 
 const App: React.FC = () => {
   const [input, setInput] = useState<string>('');
-  const [items, setItems] = useState<string[]>([]);
+  const items = useSelector((state: RootState) => state.items);
+  const dispatch = useDispatch();
 
   const handleAddElement = () => {
     if (input.trim()) {
-      items.push(input);
-      setItems(items);
+      dispatch(addElement(input));
       setInput('');
     }
   };
