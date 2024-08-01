@@ -7,6 +7,7 @@ import { TaskStatus, TypedComponent } from '@utils/enums.utils';
 import MyButton from '@components/MyButton';
 import TaskItem from '@components/TaskItem';
 import Header from '@components/Header';
+import { LanguageKey } from '@languages/enum';
 
 const AppContainer = styled.div`
   padding: 1rem;
@@ -60,7 +61,7 @@ function App() {
             setInput(e.target.value);
           }}
         />
-        <MyButton type={TypedComponent.BUTTON} text={'Ajouter'} onClick={handleAddTask} />
+        <MyButton type={TypedComponent.BUTTON} text={LanguageKey.AddTask} onClick={handleAddTask} />
       </div>
       <TaskList>
         {tasks.map(task => (

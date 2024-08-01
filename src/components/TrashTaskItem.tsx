@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Task } from '@store/types.store';
 import MyButton from '@components/MyButton';
 import { TypedComponent } from '@utils/enums.utils';
+import { LanguageKey } from '@languages/enum';
 
 interface TrashTaskItemProps {
   task: Task;
@@ -28,7 +29,7 @@ const TrashTaskItem: React.FC<TrashTaskItemProps> = ({ task, onRestore }) => {
   return (
     <TaskItemContainer>
       <TaskText>{task.text}</TaskText>
-      <MyButton type={TypedComponent.BUTTON} text={'Récupérer'} onClick={() => {
+      <MyButton type={TypedComponent.BUTTON} text={LanguageKey.Restore} onClick={() => {
         onRestore(task.id);
       }}/>
     </TaskItemContainer>

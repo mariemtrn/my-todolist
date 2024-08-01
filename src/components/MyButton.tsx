@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import StyledText from '@utils/style.utils';
 import { TypedComponent } from '@utils/enums.utils';
+import { useTranslation } from 'react-i18next';
 
 interface MyButtonProps {
   type: TypedComponent;
@@ -43,11 +44,13 @@ const Button = styled.button<StyledButtonProps>`
 }`;
 
 function MyButton({ type, text, onClick }: MyButtonProps) {
-  return <Button onClick={onClick} type={type}>
+  const { t } = useTranslation();
+
+  return (<Button onClick={onClick} type={type}>
     <StyledText type={type}>
-      {text}
+      {t(text)}
     </StyledText>
-  </Button>;
+  </Button>);
 };
 
 export default MyButton;

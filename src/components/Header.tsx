@@ -6,6 +6,9 @@ import { TypedComponent } from '@utils/enums.utils';
 import { useNavigate } from 'react-router-dom';
 import MyButton from '@components/MyButton';
 import StyledText from '@utils/style.utils';
+import { useTranslation } from 'react-i18next';
+import { LanguageKey } from '@languages/enum';
+import LanguageSelector from '@components/LangagesSelector';
 
 const HeaderContainer = styled.div`
     width: 95%;
@@ -21,6 +24,7 @@ const HeaderButtonContainer = styled.div`
 `;
 
 function Header() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -31,10 +35,11 @@ function Header() {
 
   return (
     <HeaderContainer>
-      <StyledText type={TypedComponent.TITLE}>Liste des tâches</StyledText>
+      <StyledText type={TypedComponent.TITLE}>{t(LanguageKey.Title)}</StyledText>
       <HeaderButtonContainer>
-        <MyButton type={TypedComponent.HEADER} text={'Réinitialiser'} onClick={handleResetTasks} />
-        <MyButton type={TypedComponent.HEADER} text={'Corbeille'} onClick={() => { navigate('/trash'); }} />
+        <MyButton type={TypedComponent.HEADER} text={t(LanguageKey.Reset)} onClick={handleResetTasks} />
+        <MyButton type={TypedComponent.HEADER} text={t(LanguageKey.Trash)} onClick={() => { navigate('/trash'); }} />
+        <LanguageSelector />
       </HeaderButtonContainer>
     </HeaderContainer>
   );

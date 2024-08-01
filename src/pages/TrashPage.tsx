@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import StyledText from '@utils/style.utils';
 import MyButton from '@src/components/MyButton';
 import TrashTaskItem from '@components/TrashTaskItem';
+import { LanguageKey } from '@languages/enum';
+import { useTranslation } from 'react-i18next';
 
 const TrashPageContainer = styled.div`
   padding: 20px;
@@ -22,6 +24,7 @@ const TaskList = styled.ul`
 `;
 
 function TrashPage() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const tasks = useSelector((state: RootState) => state.tasks.filter(task => task.status === TaskStatus.FINISHED));
@@ -32,8 +35,8 @@ function TrashPage() {
 
   return (
     <TrashPageContainer>
-      <StyledText type={TypedComponent.TITLE}>Corbeille</StyledText>
-      <MyButton type={TypedComponent.BUTTON} text={'Retour'} onClick={() => { navigate('/'); }} />
+      <StyledText type={TypedComponent.TITLE}>{t(LanguageKey.Trash)}</StyledText>
+      <MyButton type={TypedComponent.BUTTON} text={LanguageKey.Back} onClick={() => { navigate('/'); }} />
       <TaskList>
         {tasks.map(task => (
           <TrashTaskItem

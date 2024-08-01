@@ -5,6 +5,7 @@ import { TaskStatus, TypedComponent } from '@utils/enums.utils';
 import MyButton from '@components/MyButton';
 import TaskSelector from '@components/StatusSelector';
 import StyledText from '@utils/style.utils';
+import { LanguageKey } from '@languages/enum';
 
 interface TaskItemProps {
   task: Task;
@@ -35,7 +36,7 @@ function TaskItem({ task, onStatusChange, onArchive }: TaskItemProps) {
         value={task.status}
         onChange={(e) => { onStatusChange(task.id, e.target.value as TaskStatus); }}
       />
-      <MyButton type={TypedComponent.BUTTON} text={'Archiver'} onClick={() => { onArchive(task.id); }} />
+      <MyButton type={TypedComponent.BUTTON} text={LanguageKey.Archive} onClick={() => { onArchive(task.id); }} />
     </TaskItemContainer>
   );
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { TaskStatus } from '@src/utils/enums.utils';
+import { LanguageKey } from '@languages/enum';
+import { useTranslation } from 'react-i18next';
 
 interface TaskSelectorProps {
   value: TaskStatus;
@@ -18,10 +20,12 @@ const Select = styled.select`
 `;
 
 function TaskSelector({ value, onChange }: TaskSelectorProps) {
+  const { t } = useTranslation();
+
   return (
     <Select value={value} onChange={onChange}>
-      <option value={TaskStatus.TO_START}>To Start</option>
-      <option value={TaskStatus.DOING}>Doing</option>
+      <option value={TaskStatus.TO_START}>{t(LanguageKey.Start)}</option>
+      <option value={TaskStatus.DOING}>{t(LanguageKey.Doing)}</option>
     </Select>
   );
 };
