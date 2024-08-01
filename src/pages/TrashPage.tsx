@@ -6,8 +6,8 @@ import { updateTaskStatus } from '@store/actions.store';
 import { TaskStatus, TypedComponent } from '@utils/enums.utils';
 import { useNavigate } from 'react-router-dom';
 import StyledText from '@utils/style.utils';
-import TaskItem from '@components/TaskItem';
 import MyButton from '@src/components/MyButton';
+import TrashTaskItem from '@components/TrashTaskItem';
 
 const TrashPageContainer = styled.div`
   padding: 20px;
@@ -35,11 +35,10 @@ function TrashPage() {
       <MyButton type={TypedComponent.BUTTON} text={'Retour'} onClick={() => { navigate('/'); }} />
       <TaskList>
         {tasks.map(task => (
-          <TaskItem
+          <TrashTaskItem
             key={task.id}
             task={task}
-            onStatusChange={handleRestoreTask}
-            onArchive={() => {}}
+            onRestore={handleRestoreTask}
           />
         ))}
       </TaskList>
