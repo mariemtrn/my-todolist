@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Task } from '@store/types.store';
 import { TaskStatus, TypedComponent } from '@utils/enums.utils';
-import MyButton from '@components/MyButton';
-import TaskSelector from '@components/StatusSelector';
+import { MyButton, StatusSelector } from '@src/components';
 import StyledText from '@utils/style.utils';
 import { LanguageKey } from '@languages/enum';
 
@@ -32,7 +31,7 @@ function TaskItem({ task, onStatusChange, onArchive }: TaskItemProps) {
   return (
     <TaskItemContainer>
       <TaskText type={TypedComponent.CARD}>{task.text}</TaskText>
-      <TaskSelector
+      <StatusSelector
         value={task.status}
         onChange={(e) => { onStatusChange(task.id, e.target.value as TaskStatus); }}
       />

@@ -6,8 +6,7 @@ import { updateTaskStatus } from '@store/actions.store';
 import { TaskStatus, TypedComponent } from '@utils/enums.utils';
 import { useNavigate } from 'react-router-dom';
 import StyledText from '@utils/style.utils';
-import MyButton from '@src/components/MyButton';
-import TrashTaskItem from '@components/TrashTaskItem';
+import { MyButton, TrashTaskItem } from '@src/components';
 import { LanguageKey } from '@languages/enum';
 import { useTranslation } from 'react-i18next';
 

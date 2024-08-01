@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TaskStatus } from '@src/utils/enums.utils';
+import { TaskStatus } from 'utils/enums.utils';
 import { LanguageKey } from '@languages/enum';
 import { useTranslation } from 'react-i18next';
 
@@ -19,7 +19,7 @@ const Select = styled.select`
   margin-right: 1rem;  
 `;
 
-function TaskSelector({ value, onChange }: TaskSelectorProps) {
+function StatusSelector({ value, onChange }: TaskSelectorProps) {
   const { t } = useTranslation();
 
   return (
@@ -30,4 +30,4 @@ function TaskSelector({ value, onChange }: TaskSelectorProps) {
   );
 };
 
-export default TaskSelector;
+export default StatusSelector;

@@ -4,11 +4,10 @@ import { useDispatch } from 'react-redux';
 import { resetTasks } from '@store/actions.store';
 import { TypedComponent } from '@utils/enums.utils';
 import { useNavigate } from 'react-router-dom';
-import MyButton from '@components/MyButton';
 import StyledText from '@utils/style.utils';
 import { useTranslation } from 'react-i18next';
 import { LanguageKey } from '@languages/enum';
-import LanguageSelector from '@components/LangagesSelector';
+import { MyButton, LanguagesSelector } from '@src/components';
 
 const HeaderContainer = styled.div`
     width: 95%;
@@ -39,7 +38,7 @@ function Header() {
       <HeaderButtonContainer>
         <MyButton type={TypedComponent.HEADER} text={t(LanguageKey.Reset)} onClick={handleResetTasks} />
         <MyButton type={TypedComponent.HEADER} text={t(LanguageKey.Trash)} onClick={() => { navigate('/trash'); }} />
-        <LanguageSelector />
+        <LanguagesSelector />
       </HeaderButtonContainer>
     </HeaderContainer>
   );

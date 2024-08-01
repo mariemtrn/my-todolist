@@ -4,9 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addTask, archiveTask, updateTaskStatus } from '@store/actions.store';
 import { RootState } from '@store/types.store';
 import { TaskStatus, TypedComponent } from '@utils/enums.utils';
-import MyButton from '@components/MyButton';
-import TaskItem from '@components/TaskItem';
-import Header from '@components/Header';
+import { MyButton, TaskItem, Header } from '@src/components';
 import { LanguageKey } from '@languages/enum';
 
 const AppContainer = styled.div`

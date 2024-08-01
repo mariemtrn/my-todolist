@@ -7,7 +7,7 @@ const Select = styled.select`
   margin: 0 10px;
 `;
 
-const LanguageSelector: React.FC = () => {
+const LanguagesSelector: React.FC = () => {
   const { i18n, t } = useTranslation();
 
   const changeLanguage = (lng: string) => {
@@ -24,4 +24,4 @@ const LanguageSelector: React.FC = () => {
   );
 };
 
-export default LanguageSelector;
+export default LanguagesSelector;
