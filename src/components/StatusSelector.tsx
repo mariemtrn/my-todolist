@@ -23,7 +23,7 @@ function TaskSelector({ value, onChange }: TaskSelectorProps) {
   const { t } = useTranslation();
 
   return (
-    <Select value={value} onChange={onChange}>
+    <Select data-testid={`select-status-${value}`} value={value} onChange={onChange}>
       <option value={TaskStatus.TO_START}>{t(LanguageKey.Start)}</option>
       <option value={TaskStatus.DOING}>{t(LanguageKey.Doing)}</option>
     </Select>
