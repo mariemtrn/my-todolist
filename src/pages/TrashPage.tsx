@@ -11,13 +11,14 @@ import TrashTaskItem from '@components/TrashTaskItem';
 
 const TrashPageContainer = styled.div`
   padding: 20px;
-  background-color: #ede7f6;
+  background-color: var(--background-color);
   min-height: 100vh;
 `;
 
 const TaskList = styled.ul`
   list-style-type: none;
   padding: 0;
+    width: 75%;
 `;
 
 function TrashPage() {

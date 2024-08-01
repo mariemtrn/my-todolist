@@ -24,6 +24,7 @@ const StyledText = styled.span<StyledTextProps>`
                 font-size: 24px;
                 font-weight: bold;
                 color: #512da8;
+                margin-right: 1rem;
             `;
         case TypedComponent.CARD:
             return css`

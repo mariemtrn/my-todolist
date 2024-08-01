@@ -13,7 +13,7 @@ const TaskItemContainer = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f3e5f5;
+  background-color: var(--card-background-color);
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;

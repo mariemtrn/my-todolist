@@ -8,8 +8,8 @@ import MyButton from '@components/MyButton';
 import StyledText from '@utils/style.utils';
 
 const HeaderContainer = styled.div`
-    width: 100%;
-    margin-top: 1rem;
+    width: 95%;
+    margin: 1rem 0;
 `;
 
 const HeaderButtonContainer = styled.div`
