@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --background-color: #ede7f6;
+  --card-background-color: #deddde;
+  --input-background-color: #9F9F9F;
+  --button-background-color: #7e57c2;
+  --border-input-color: #d1d1d6;
+
+  --text-color: #000000;
+  --text-color-button: #FFFF;
+  --menu-text-color: #FFFF;
+  --accentuation-color: #000000;
+  --menu-accentuation-color: #444343;
+  --light-grey-color: #A2A2A2;
+
+  --waiting-color: #F0C134;
+  --error-todo-color: #D50031;
+  --validated-color: #247F44;
+
+  --border-radius: 10px;
+  --home-season-btn-border-radius: 8px 0 0 8px ;
+  --home-lockOrEdit-btn-border-radius: 0 8px 0 0 ;
+  --home-download-btn-border-radius: 0 0 8px 0 ;
+  --large-border-radius: 10px;
+
+  --height: 40px;
+
+  font-family: Inter, sans-serif;
+  line-height: 18px;
+  font-size: 17px;
+  font-weight: 500;
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  overflow: hidden;
+  overflow-y: unset;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root, #root>div {
+  margin: 0;
+  width: 100%;
 }

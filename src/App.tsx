@@ -1,12 +1,35 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { addTask, archiveTask, resetTasks, updateTaskStatus } from '@store/actions.store';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTask, archiveTask, updateTaskStatus } from '@store/actions.store';
 import { RootState } from '@store/types.store';
-import { TaskStatus } from '@utils/enums.utils';
-import { useNavigate } from 'react-router-dom';
+import { TaskStatus, TypedComponent } from '@utils/enums.utils';
+import MyButton from '@components/MyButton';
+import TaskItem from '@components/TaskItem';
+import Header from '@components/Header';
+
+const AppContainer = styled.div`
+  padding: 1rem;
+  background-color: var(--background-color);
+  min-height: 100vh;
+`;
+
+const TaskList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+    width: 75%;
+`;
+
+const MyInput = styled.input`
+    height: 2.5rem;
+    width: 20rem;
+    margin-right: 1rem;
+    border: 0.05rem black solid;
+    border-radius: var(--border-radius);
+`;
 
 function App() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [input, setInput] = useState<string>('');
   const tasks = useSelector((state: RootState) => state.tasks.filter(task => task.status !== TaskStatus.FINISHED));
@@ -22,52 +45,34 @@ function App() {
     dispatch(updateTaskStatus(id, status));
   };
 
-  const handleResetTasks = () => {
-    dispatch(resetTasks());
-    localStorage.removeItem('reduxState');
-  };
-
   const handleArchiveTask = (id: number) => {
     dispatch(archiveTask(id));
   };
 
   return (
-    <div>
-      <h1>Liste des tâches</h1>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-        }}
-      />
-      <button onClick={handleAddTask}>Ajouter</button>
-      <button onClick={handleResetTasks}>Réinitialiser</button>
-      <button onClick={() => {
-        navigate('/trash');
-      }}>Corbeille
-      </button>
-      <ul>
+    <AppContainer>
+      <Header />
+      <div>
+        <MyInput
+          type="text"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+        />
+        <MyButton type={TypedComponent.BUTTON} text={'Ajouter'} onClick={handleAddTask} />
+      </div>
+      <TaskList>
         {tasks.map(task => (
-          <li key={task.id}>
-            {task.text} - {task.status}
-            <select
-              value={task.status}
-              onChange={(e) => {
-                handleStatusChange(task.id, e.target.value as TaskStatus);
-              }}
-            >
-              <option value={TaskStatus.TO_START}>To Start</option>
-              <option value={TaskStatus.DOING}>Doing</option>
-            </select>
-            <button onClick={() => {
-              handleArchiveTask(task.id);
-            }}>Archiver
-            </button>
-          </li>
+          <TaskItem
+            key={task.id}
+            task={task}
+            onStatusChange={handleStatusChange}
+            onArchive={handleArchiveTask}
+          />
         ))}
-      </ul>
-    </div>
+      </TaskList>
+    </AppContainer>
   );
 };
 

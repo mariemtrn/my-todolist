@@ -10,3 +10,12 @@ export enum ActionType {
   RESET_TASKS = 'RESET_TASKS',
   ARCHIVE_TASK = 'ARCHIVE_TASK'
 }
+
+export enum TypedComponent {
+  TITLE = 'title',
+  BASIC = 'basic',
+  CARD = 'card',
+  BUTTON = 'button',
+  SUBTITLE = 'subtitle',
+  HEADER = 'header'
+}
