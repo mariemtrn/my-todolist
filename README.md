@@ -1,4 +1,4 @@
-**# My To-Do List
+# My To-Do List
 
 ## Overview
 
@@ -19,7 +19,8 @@ Follow these instructions to get your copy of the project up and running on your
 
    ```bash
    git clone https://github.com/yourusername/my-todolist.git
-   cd my-todolist```
+   cd my-todolist 
+   ```
 
 2**Build the Application**
 
@@ -36,15 +37,13 @@ The build files will be output to the build directory.
 To run the application, simply use:
    ```bash
    npm start
-
 ```
 
 2**Running Unit Tests**
 
 To run the tests with Jest, simply use:
    ```bash
-   npm test
-
+   jest
 ```
 
 
