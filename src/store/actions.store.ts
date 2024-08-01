@@ -1,4 +1,4 @@
-import { AddTaskAction, ResetTasksAction, UpdateTaskStatusAction } from '@store/types.store';
+import { AddTaskAction, ArchiveTaskAction, ResetTasksAction, UpdateTaskStatusAction } from '@store/types.store';
 import { ActionType, TaskStatus } from '@utils/enums.utils';
 
 export const addTask = (text: string): AddTaskAction => ({
@@ -17,4 +17,9 @@ export const updateTaskStatus = (id: number, status: TaskStatus): UpdateTaskStat
 
 export const resetTasks = (): ResetTasksAction => ({
   type: ActionType.RESET_TASKS
+});
+
+export const archiveTask = (id: number): ArchiveTaskAction => ({
+  type: ActionType.ARCHIVE_TASK,
+  payload: id
 });

@@ -24,4 +24,9 @@ export interface ResetTasksAction {
   type: ActionType.RESET_TASKS
 }
 
-export type ActionTypes = AddTaskAction | UpdateTaskStatusAction | ResetTasksAction;
+export interface ArchiveTaskAction {
+  type: ActionType.ARCHIVE_TASK;
+  payload: number
+}
+
+export type ActionTypes = AddTaskAction | UpdateTaskStatusAction | ResetTasksAction | ArchiveTaskAction;
