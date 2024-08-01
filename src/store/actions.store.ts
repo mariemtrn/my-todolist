@@ -1,6 +1,20 @@
-import { AddElementAction } from '@src/store/types.store';
+import { AddTaskAction, ResetTasksAction, UpdateTaskStatusAction } from '@store/types.store';
+import { ActionType, TaskStatus } from '@utils/enums.utils';
 
-export const addElement = (element: string): AddElementAction => ({
-  type: 'ADD_ELEMENT',
-  payload: element
+export const addTask = (text: string): AddTaskAction => ({
+  type: ActionType.ADD_TASK,
+  payload: {
+    id: Date.now(),
+    text,
+    status: TaskStatus.TO_START
+  }
+});
+
+export const updateTaskStatus = (id: number, status: TaskStatus): UpdateTaskStatusAction => ({
+  type: ActionType.UPDATE_TASK_STATUS,
+  payload: { id, status }
+});
+
+export const resetTasks = (): ResetTasksAction => ({
+  type: ActionType.RESET_TASKS
 });
